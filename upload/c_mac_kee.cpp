@@ -1,9 +1,3 @@
-/**
- *     Randimbinirina Mamitiana
- *             MISA M1
- *          Juillet 2021;
- ***********************************/
-
 
 #include <iostream>
 #include <algorithm>
