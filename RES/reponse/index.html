@@ -1,0 +1,434 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="">
+    </head>
+
+<body>
+    <style>
+        .deco-none li,.deco-none{
+            list-style: none;
+        }
+        
+        li{
+            margin: 10px 0;
+        }
+        
+        .card{
+            width: auto;
+            padding: 10px 20px;
+        }
+        
+        .right{
+            display: flex;
+            justify-content: right;
+        }
+
+        .logo-group{
+            width: 100%;
+            margin: 100px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo-item{
+            padding-right:10px;
+        }
+        
+        .logo-item img{
+            width: 100px;
+            margin-right: 100px;
+        }
+        .misa{
+            width: 50px;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .text-right{
+            text-align: right;
+        }
+        
+        .underlined{
+            text-decoration: underline;
+        }
+
+        .code{
+        padding: 2px 5px;
+        background-color: black;
+        color: chartreuse;
+        }
+        
+        .about-me{
+            margin-top: 200px;
+        }
+        
+        .container{
+            display: relative;
+            left: -100px;
+            width: 700px;
+            margin: auto;
+            
+        }
+        
+        .container-item{
+            width: 100%;
+            padding: 20px 0px;
+        
+        }
+        ul{
+            display: inline-block;
+            max-width: 70%;
+        }
+        
+        p{
+            display: inline-block;
+            width: 500px;
+        }
+        
+        .res{
+            border: solid 3px darkgray;
+            border-radius: 10px;
+            margin-top: 50px;
+            padding-bottom: 3rem;
+        }
+        
+        .res-title{ display: inline-block;position: relative;top : -37px;left: 20px; background-color: white; padding: 5px 10px;}
+        .res-graph{ display: flex; justify-content: space-around;}
+        .graph-item{display: inline-block;max-width: 40%;}
+        .res-info{width: 100%;padding: 20px;padding-left: 70px;}
+        .center{text-align: center;}
+        .lf{display: inline;text-decoration: line-through; }
+        table,th,td{border:1px solid;padding: 5px 10px;}
+        table{border-collapse: collapse;}
+        
+        
+        
+    </style>
+    
+    <div class="container">
+        <div class="card univ">
+            <ul class="deco-none">
+                <li>UNIVERSITE D'ANTANANARIVO</li>
+                <li>FACUILTE DES SCIENCE</li>
+                <li>--------------------------</li>
+                <li>Mathématiques Informatique et <br> 
+                    Statistiques Appliquées</li>
+            </ul>
+        </div>
+
+        <div class="title">
+            <div class="logo-group">
+                <div class="logo-item">
+                    <img src="img/univ_tana.png" alt="Logo Univ Tana">
+                </div>
+                <div class="logo-item">
+                    <img src="img/fac_science.jpeg" alt="logo fac science">
+                </div>
+                <div class="logo-item misa">
+                    <img src="img/logo_misa.png" alt="logo misa">
+                </div>
+            </div>
+            <div class="title text-center">
+                <h1 class="text-center">- Optimisation de Cuthill-Mac Kee -</h1>
+                <h2 class="text-center">
+                    
+                    Algorithme <br>
+                    et
+                    <br>Résolution
+                </h2>
+            </div>
+        </div>
+
+        <div class="card right">
+            <ul class="text-right about-me deco-none">
+                <li>RATEFIARISON Harivony Lalatiana</li>
+                <li>harivonyratefiarison@gmail.com</li>
+                <li>+261 34 93 851 83</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="container-item">
+            <h2 class="underlined">I - Optimisation de Cuthill-Mac Kee</h2>
+                <p>L'optimisation de Cuthill-Mac Kee consiste à résoudre le systeme de la forme `Ax = b` en en optimisant le rangement et le nombre d'operation</p>
+            
+            <h3 class="underlined">On se propose de résudre le systeme suivantes :</h3>
+                <p class="center">`A=[[6,,,,,,,,,],[0,4,,,,,,,,],[0,0,4,,,,,,,],[1,1,0,4,,,,,,],[1,0,1,1,6,,,,,] ,[0,0,1,0,1,4,,,,],[0,0,0,0,0,0,4,,,],[1,0,1,0,0,1,0,6,,],[1,1,0,0,0,0,0,0,4,] ,[1,0,0,0,0,0,1,1,0,6]]
+                    [[x_1],[x_2],[x_3],[x_4],[x_5],[x_6],[x_7],[x_8],[x_9],[x_10]]`
+                    `=[[11],[8],[2],[0],[4],[-4],[5],[18],[7],[11]]`
+                </p>
+        </div>
+
+        <div class="container-item">
+            <h2 class="underlined">II - Algorithme de Résolution</h2>
+            <div class="container-item">
+                <h3 class="underlined">a - Graphe correspondante à matrice`A`:</h3>
+                <p>
+                    Pour obtenir le graphe correspondant à la matrice `A`, on a numérote les lignes de la matrice A, puis on récupère comme
+                    voisins tous les numéros de ligne non nul.
+                </p>
+                <p class="center">
+                    `[[1],[2],[3],[4],[5],[6],[7],[8],[9],[10]][[6,,,,,,,,,],[0,4,,,,,,,,],[0,0,4,,,,,,,],[1,1,0,4,,,,,,],[1,0,1,1,6,,,,,] ,[0,0,1,0,1,4,,,,],[0,0,0,0,0,0,4,,,],[1,0,1,0,0,1,0,6,,],[1,1,0,0,0,0,0,0,4,] ,[1,0,0,0,0,0,1,1,0,6]]`
+                </p>
+                <!-- reponse g1-->
+
+                <div class="res">
+                    <h3 class="res-title">Graphe correspondante à la matrice `A`</h3>
+
+                    <div class="res-graph">
+                            <img class="center"src="img/graph_A.png" alt="">
+                    </div>
+
+                    
+
+                    <div class="res-graph">
+                        <div class="graph-item">
+                        </div>
+                        <div class="graph-item">
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin reponse g1-->
+            </div>
+
+            <div class="container-item">
+                <h3 class="underlined">b - Recherche d'un sommet périphérique :</h3>
+                Prenons le sommet n = 9, et cherchons sont éxcentricité.
+                <ul>
+                    <li>
+                        <section class="underlined">n = 9 
+
+                        </section>
+                        <section>
+                        <br>`N_0 = {9}`
+                        <br>`N_1 = {1, 2}`
+                        <br>`N_2 = V(N_1) `−` N_0 = { `<p class="lf">`9`</p>`, 4, 5, 8, 10,` <p class="lf">`9 ,4`</p>`} = {4, 5, 8, 10}`
+                        <br>`N_3 = V(N_2) − N_1 = {` <p class="lf">2 , 5  , 1 </p>, <p class="lf">1 , 4,</p> 3, 6, <p class="lf">3, 6,10, 1, 8,</p>` 7} = {3, 6, 7}`
+                       <br> `N_4 = V(N_3) − N_2 = { `<p class="lf">`5 , 6, 8`</p>, <p class="lf">`3 , 5, 8 , 10`</p>`}={}`
+                       <br><br> D'où `e(9) = 3`
+                        </section>
+                    </li>
+                    <li>
+                        <section class="underlined">`n = 3`,` n = 6, n = 7` </section>
+                        <p>On procède de la même manière et on obtient: e(3) = 3, e(6) = 3 et e(7) = 4.
+                            Comme e(7) > e(9) = e(3) = e(6), alors prenons 7 comme sommet périphérique .</p>
+                    </li>
+                </ul>
+            <br>
+            <div class="res">
+                <h3 class="res-title">Ainsi, on obtient le graphe suivante :</h3>
+
+                <div class="res-graph">
+                        <img class="center"src="img/graph_A_2.png" alt="">
+                </div>
+
+                
+
+                <div class="res-graph">
+                    <div class="graph-item">
+                    </div>
+                    <div class="graph-item">
+                        
+                    </div>
+                </div>
+            </div>    
+                
+            </div>
+            <div class="container-item">
+                <h3 class="underlined">c - Recherche de sigma :</h3>
+                <table class="center">
+                    <tr>
+                        <th>i</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                    </tr>
+                    <tr>
+                        <td>`σ_i`</td>
+                        <td>7</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>2</td>
+                    </tr>
+                </table>
+                NTF = 37
+                <div class="res">
+                    <h3 class="res-title">D'où la matrice correspondant à `σ_i` :</h3>
+                    <div class="res-graph">
+                        <p class="center">
+                                `[
+[✕,.,.,.,.,.,.,.,.,.],[✕,✕,.,.,.,.,.,.,.,.],[.,✕,✕,.,.,.,.,.,.,.],[.,✕,✕,✕,.,.,.,.,.,.],[.,.,✕,.,✕,.,.,.,.,.],
+[.,.,✕,.,✕,✕,.,.,.,.],[.,.,.,✕,.,.,✕,.,.,.],[.,.,.,✕,✕,✕,.,✕,.,.],[.,.,.,✕,.,.,.,✕,✕,.],[.,.,.,✕,.,.,✕,.,.,✕]
+]`
+
+                            </p>
+                            
+                    </div>
+
+                </div>    
+                
+            </div>
+
+
+            <div class="container-item">
+                <h3 class="underlined">d - Recherche de sigma inverse :</h3>
+                <table>
+                <tr>
+                    <th>i</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                    <td>`σ_i`</td>
+                    <td>7</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>`σI_i`</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>9</td>
+                </tr>
+                </table>
+                <!-- reponse g1-->
+                <p>NTF = 31</p>
+                <div class="res">
+                    <h3 class="res-title">Sigma Inverse</h3>
+
+                    <div class="res-graph">
+                        <div class="graph-item">
+                            <h3>Graphe correspondant:</h3>
+                            <img src="img/sigma_graphe.png" alt="" width="300px">
+                            
+                        </div>
+                        
+                        <div class="graph-item">
+                            <h3>Profil correspondant :</h3>
+                            <p>
+                                `[
+[✕,.,.,.,.,.,.,.,.,.],[✕,✕,.,.,.,.,.,.,.,.],[.,✕,✕,.,.,.,.,.,.,.],[✕,.,.,✕,.,.,.,.,.,.],[.,.,✕,.,✕,.,.,.,.,.],
+[.,.,✕,.,✕,✕,.,.,.,.],[.,✕,✕,✕,.,.,✕,.,.,.],[.,.,.,.,✕,✕,✕,✕,.,.],[.,.,.,.,.,.,✕,✕,✕,.],[.,.,.,.,.,.,.,.,✕,✕]
+]`
+                            </p>
+                            
+                        </div>
+                        
+                            
+                    </div>
+                    <div class="res-info">
+                        <p>Cette graphe donne la matrice dont son profil est le plus optimisé possible.</p>
+                    </div>
+                </div>
+
+
+                
+
+                
+            </div>
+            <div class="container-item">
+                <h3 class="underlined">e -Recherche de la matrice de passage P :</h3>
+                <p>
+                    P est la matrice de passage de i vers σI i . <br>
+                    Pour retrouver les éléments de P : <br>
+                    `P_(ij) = δ_(iσI_i) = {[1si],[0 ]:}`   
+`{:[i=σI j],[si.non]:}`
+<br>    d'ou :
+                </p>
+                <p>
+                    `P=[
+[.,1,.,.,.,.,.,.,.,.],[.,.,.,1,.,.,.,.,.,.],[.,.,.,.,1,.,.,.,.,.],[.,.,.,.,.,.,.,.,1,.],[.,.,.,.,.,1,.,.,.,.],
+[.,.,1,.,.,.,.,.,.,.],[1,.,.,.,.,.,.,.,.,.],[.,.,.,.,.,.,.,.,.,.],[.,.,.,.,.,.,.,.,.,1],[.,.,.,.,.,.,1,.,.,.]
+]`
+                </p>
+                <div class="res">
+                    <h3 class="res-title">Résultat</h3>
+
+                    
+                    <div class="res-info">
+                        
+                        <h3>Résolution :</h3>
+                        Posons `A^'` la matrice `P^t.A.P`
+                        <p>Comme `Ax = b`,</p>
+                        <ul>
+                            <li>`A.(P.P^t )x = b` ,</li> 
+                            <li>`P^t .A.(P.P^t )x = P^t .b ,`</li>
+                            <li>`(P^t .A.P ).P^t x = P^t .b ,`</li>
+                            <li>`{[A^'=P^t.A.P],[b^'=P^t.b],[A^'.x^'=b^'],[P^t.x=x^']:}`</li>
+                        </ul>
+                        
+                    </div>
+
+                    <div class="res-graph">
+                        <div class="graph-item">
+                            <h3 class="underlined">Aprés Calcul :</h3>
+                            `A^'=[
+[6  ,0  ,1  ,1  ,0  ,0  ,0  ,0  ,0  ,1],
+[0  ,4  ,0  ,0  ,0  ,0  ,0  ,0  ,1  ,1  ],
+[1  ,0  ,6  ,0  ,1  ,0  ,0  ,1  ,0  ,1  ],
+[1  ,0  ,0  ,4  ,0  ,0  ,0  ,0  ,0  ,0  ],
+[0  ,0  ,1  ,0  ,4  ,1  ,0  ,1  ,0  ,0  ],
+[0  ,0  ,0  ,0  ,1  ,6  ,1  ,1  ,0  ,1  ],
+[0  ,0  ,0  ,0  ,0  ,1  ,4  ,0  ,1  ,1  ],
+[0  ,0  ,1  ,0  ,1  ,1  ,0  ,4  ,0  ,0  ],
+[0  ,1  ,0  ,0  ,0  ,0  ,1  ,0  ,4  ,0  ],
+[1  ,1  ,1  ,0  ,0  ,1  ,1  ,0  ,0  ,6  ]
+]`
+                            <br>
+                        </div>
+                        
+                        <div class="graph-item">
+                            <h3 class="underlined">Solution du système :</h3>
+                            `b^' =[[5, 11, 18, 11, -4,  2,  4,  7,  0,  8]]`
+
+<br><br>
+`x^' =[[ 1,  1,  3,  1, -2,  0,  1,  1, -1,  2]]`
+<br><br> <br>
+
+`x =[[ 1,  2,  0, -1,  1, -2,  1,  3,  1,  1]]`
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
