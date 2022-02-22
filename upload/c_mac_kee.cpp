@@ -77,7 +77,7 @@ class CuthillMackee
 int main(){
     
     CuthillMackee* cm = new CuthillMackee("matrice1.txt");
-    cm->solve(3);//Solve prend un sommet (int)
+    cm->solve(9);//Solve prend un sommet (int)
     cm->storeData("matWithMinProfile.txt");
 
     return 0;
@@ -452,7 +452,7 @@ void CuthillMackee::findFirstNode(int node)
             excetricity = _graphe1->findEccentricity(vect[i]);
         }
     }
-
+    _firstNode = 6; // debug
     cout <<"Premier noeud trouver est : " << _firstNode << endl;
 }
 
@@ -620,7 +620,7 @@ void CuthillMackee::buildP(int* sigma)
     {
         for (size_t j = 0; j < _dim; j++)
         {
-            if (i == sigma[j])
+            if (i == sigma[j])    //debug
             {
                 _P[i][j] = 1;
             }
