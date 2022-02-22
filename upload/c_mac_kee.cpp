@@ -414,7 +414,7 @@ void CuthillMackee::solve(int node)
      * *********************************/
     buidSigmaInverse();
     buildP(_sigma);//sigma inverse
-
+    /*
     //Calcul de Aprim et de bprim
     int** P_T = transpose(_P, _dim, _dim); //debug
     _A = matTimesMat(_P, _A, _dim, _dim, _dim, _dim); //P*A
@@ -433,6 +433,7 @@ void CuthillMackee::solve(int node)
     // Second Membre
     displayArray(_b, _dim);
     cout << endl;
+    */
 
     cout <<"--------------------------------------------------------------------------------------" << endl;
     cout << " Calcule de X' et résolution " << endl;
