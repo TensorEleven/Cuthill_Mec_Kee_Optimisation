@@ -76,9 +76,9 @@ class CuthillMackee
 
 int main(){
     
-    CuthillMackee* cm = new CuthillMackee("matrice1.txt");
+    CuthillMackee* cm = new CuthillMackee("matrixSystem.txt");
     cm->solve(9);//Solve prend un sommet (int)
-    cm->storeData("matWithMinProfile.txt");
+    cm->storeData("matrixMinProfil.txt");
 
     return 0;
 }
@@ -656,11 +656,11 @@ void CuthillMackee::storeData(string filename)
         {
             if (i==_dim)
             {
-                outFile << to_string(_b[j]) << ",";
+                outFile << to_string(_b[j]) << " ";
             }
             else
             {
-                outFile << to_string(_A[i][j]) << ",";
+                outFile << to_string(_A[i][j]) << " ";
             }
         }
         outFile << endl;

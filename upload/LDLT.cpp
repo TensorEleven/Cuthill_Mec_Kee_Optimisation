@@ -156,7 +156,7 @@ void LDLT::loadAb(){
     //cout << "Entrez le fichier a charger : "; cin >> fileName;
 
     // ouverture du fichier, 
-    inFile.open("matrix.txt");
+    inFile.open("matrixSystem.txt");
 
     if(inFile){
         //recuperer la taille de la matrice
