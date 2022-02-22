@@ -375,9 +375,6 @@ void CuthillMackee::getData()
 
 void CuthillMackee::solve(int node)
 {
-    
-
-
     /**
      * Etape de cuthill-Mackee
      * *********************************/
@@ -419,17 +416,30 @@ void CuthillMackee::solve(int node)
     buildP(_sigma);//sigma inverse
 
     //Calcul de Aprim et de bprim
+    int** P_T = transpose(_P, _dim, _dim); //debug
     _A = matTimesMat(_P, _A, _dim, _dim, _dim, _dim); //P*A
     _A = matTimesMat(_A, transpose(_P, _dim, _dim), _dim, _dim, _dim, _dim);//A*Pt
-    _b = matTimesVect(_P, _b, _dim, _dim, _dim); //P*b
+    
+    
+    displayArray(_b, _dim);
 
     cout <<"--------------------------------------------------------------------------------------" << endl;
     cout << " (cuthill-Mackee-Inverse) Voici la matrice matrice optimisée avec son second membre :" << endl;
     cout <<"--------------------------------------------------------------------------------------" << endl;
+    // Matrice Optimisé
     displayMatrix(_A, _dim, _dim);
     cout << endl;
+    
+    // Second Membre
     displayArray(_b, _dim);
     cout << endl;
+
+    cout <<"--------------------------------------------------------------------------------------" << endl;
+    cout << " Calcule de X' et résolution " << endl;
+    cout <<"--------------------------------------------------------------------------------------" << endl;
+
+
+
 }
 
 
@@ -631,7 +641,6 @@ void CuthillMackee::buildP(int* sigma)
         }
     }
 }
-
 
 
 void CuthillMackee::storeData(string filename)
@@ -855,4 +864,17 @@ void CuthillMackee::displayMatrix(int** Mat, int row, int col)
         cout << endl;        
     }
     
+}
+
+//debug
+int** solveMatrice(int** A, int*b,int dim){
+    //résolution du systeme
+    int** res;
+    for(int i=dim-1;i>=0;i--){
+        float sum=0;
+        for(int j = i+1;j<dim;j++)
+            sum += (A[i][j]*b[j]);   
+        b[i] = (b[i]-sum)/(A[i][i]); 
+    }
+
 }
