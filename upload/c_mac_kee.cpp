@@ -378,15 +378,12 @@ void CuthillMackee::solve(int node)
     /**
      * Etape de cuthill-Mackee
      * *********************************/
+        cout <<"-------------------------------------------------------------" << endl;
+    cout << "           Le calcule de Sigma donnes                       :" << endl;
+    cout <<"-------------------------------------------------------------" << endl;
     findFirstNode(node);
     buildSigma();
     buildP(_sigma);//sigma
-
-    cout <<"-------------------------------------------------------------" << endl;
-    cout << "           La matrice de passage trouver                   :" << endl;
-    cout <<"-------------------------------------------------------------" << endl;
-    displayMatrix(_P, _dim, _dim);
-    cout << endl;
 
     cout <<"-------------------------------------------------------------" << endl;
     cout << " Voici la matrice matrice originale avec son second membre :" << endl;
@@ -400,6 +397,17 @@ void CuthillMackee::solve(int node)
     _A = matTimesMat(transpose(_P, _dim, _dim), _A, _dim, _dim, _dim, _dim); //Pt*A
     _A = matTimesMat(_A, _P, _dim, _dim, _dim, _dim);//A*P
     _b = matTimesVect(transpose(_P, _dim, _dim), _b, _dim, _dim, _dim); //Pt*b
+
+    cout <<"-------------------------------------------------------------" << endl;
+    cout << "     La matrice de passage de i vers sigma trouvé          :" << endl;
+    cout <<"-------------------------------------------------------------" << endl;
+    displayMatrix(_P, _dim, _dim);
+    cout << endl;
+
+
+
+    
+    cout << endl;
 
     cout <<"------------------------------------------------------------------------------" << endl;
     cout << " (cuthill-Mackee) Voici la matrice matrice optimisée avec son second membre :" << endl;
@@ -434,11 +442,6 @@ void CuthillMackee::solve(int node)
     displayArray(_b, _dim);
     cout << endl;
     */
-
-    cout <<"--------------------------------------------------------------------------------------" << endl;
-    cout << " Calcule de X' et résolution " << endl;
-    cout <<"--------------------------------------------------------------------------------------" << endl;
-
 
 
 }
